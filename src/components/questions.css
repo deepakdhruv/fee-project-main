@@ -1,0 +1,42 @@
+.faq-item {
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    justify-content: left;
+    position: relative;
+  }
+  
+  .faq-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .answer {
+    display: none;
+  }
+  
+  .faq-item.active {
+    background-color: #e0e0e0;
+  }
+  
+  .ques {
+    color: aqua;
+  }
+  
+  .right {
+    width: 50%;
+  }
+  
+  .q {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .faq-item.active {
+    margin-bottom: 20px;
+  }
+  
+  .answer.active {
+    display: block;
+  }
+  

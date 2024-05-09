@@ -1,0 +1,442 @@
+/* Grover */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Added for better layout handling */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(2, 21, 29);
+  padding: 1% 3%;
+}
+
+.anav {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.acontent {
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+  margin-right: 5%;
+  color: white;
+}
+
+.apart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: large;
+  text-decoration: none;
+  color: white;
+}
+
+.alogin {
+  background: white;
+  padding: 1% 5%;
+  border-radius: 8px;
+  color: black;
+}
+
+.alogin:hover {
+  color: blue;
+}
+
+.amain {
+  background-color: rgb(2, 21, 29);
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 5% 15%;
+  gap: 2%;
+}
+
+.aright {
+  width: 90%;
+  height: auto;
+}
+
+.aleft {
+  align-items: center;
+}
+
+.asmallcase {
+  color: rgba(9, 119, 237, 0.801);
+  font-weight: 600;
+  font-size: large;
+}
+
+.acurated {
+  font-size: 2.5rem; /* Adjusted for better readability */
+  font-weight: 650;
+  letter-spacing: 1px;
+}
+
+.aetf {
+  width: 70%;
+  font-size: 1.2rem; /* Adjusted for better readability */
+  font-weight: 500;
+  margin-top: 6%;
+}
+
+.adiscover {
+  width: 40%;
+  padding: 2.5% 10%;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  font-weight: 600;
+  margin-top: 6%;
+  transition: background-color 0.3s ease;
+}
+
+.adiscover:hover {
+  background-color: #cdcaca;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid #001f3f;
+  border-radius: 15px;
+  margin-top: 8%;
+  padding: 7% 9%;
+  transition: transform 0.3s;
+  width: 100%; /* Adjusted to fit container */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.8rem; /* Adjusted for better readability */
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #001f3f;
+}
+
+.card-text {
+  font-size: 1.2rem; /* Adjusted for better readability */
+  color: #495057;
+}
+
+.card-price {
+  color: #dc3545; /* Red color for price */
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .acontent {
+      flex-direction: column;
+      gap: 3%;
+  }
+
+  .aright,
+  .aleft {
+      width: 100%;
+  }
+
+  .adiscover,
+  .card {
+      width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .amain {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .aright,
+  .aleft {
+      width: 100%;
+  }
+
+  .adiscover,
+  .card {
+      width: 90%;
+  }
+
+  .acurated {
+      font-size: 2rem; /* Adjusted for smaller screens */
+  }
+
+  .aetf {
+      font-size: 1rem; /* Adjusted for smaller screens */
+  }
+}
+
+/* dikshit */
+.s {
+  background-color: rgb(239, 244, 248);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  width: 100%;
+  padding: 3% 0%;
+}
+
+.s-left {
+  top: 0px;
+  padding: 50px;
+  margin: 50px;
+}
+
+.buttons {
+  border: none;
+  border-radius: 12px;
+  color: black;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 20%;
+}
+
+.fil {
+  border: none;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 10% 10%;
+}
+
+.hidden-div {
+  display: none;
+  height: 10%;
+  width: 70%;
+  padding: 10%;
+  margin: 10%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.boxdiv {
+  display: none;
+  height: 10%;
+  width: 40%;
+  padding: 10%;
+  margin: 10%;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+#minInvestment,
+#volatility,
+#index,
+#manager {
+  margin-bottom: 20%;
+}
+
+.dropdown-symbol {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-symbol::after {
+  content: "▼";
+}
+
+.expanded::after {
+  content: "▲";
+}
+
+.questions {
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.faq-item {
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: left;
+  position: relative; /* Add position relative to allow absolute positioning */
+}
+
+.faq-item:hover {
+  background-color: #f0f0f0;
+}
+
+.answer {
+  display: none;
+}
+
+.faq-item.active {
+  background-color: #e0e0e0;
+}
+
+.faq-container {
+  width: 100%;
+  padding: 70px;
+}
+
+.ques {
+  color: aqua;
+}
+
+.right {
+  width: 50%;
+}
+
+.q {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.faq-item.active {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* singla */
+.q-main {
+  display: flex;
+  background-color: rgb(2, 21, 29);
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.q-a {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-around;
+  padding: 3%;
+  border-radius: 20px;
+  font-weight: 500;
+  line-height: 120%;
+  font-size: 20px;
+}
+
+.q-img {
+  height: 40px;
+  width: 40px;
+}
+
+.q-img-2 {
+  height: 50px;
+  width: 50px;
+}
+
+.q-main-2 {
+  display: flex;
+  justify-content: space-around;
+  background-color: aliceblue;
+  align-items: center;
+  padding: 20px;
+}
+
+.q-b {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.q-button {
+  background-color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 150px;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(2, 21, 29);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer div {
+  width: 20%;
+  vertical-align: top;
+  padding: 10px;
+}
+
+footer div h2 {
+  color: #fff;
+}
+
+footer div ul {
+  line-height: 40px;
+  list-style-type: none;
+  padding: 0;
+}
+
+footer div ul li {
+  margin-bottom: 5px;
+}
+
+footer div ul li a {
+  font-size: large;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer div ul li a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.q-combine {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid #001f3f;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #001f3f;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.card-price {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.card-change {
+  color: #28a745; 
+  font-weight: bold;
+}
+
+.card-change-negative {
+  color: #dc3545; 
+  font-weight: bold;
+}
